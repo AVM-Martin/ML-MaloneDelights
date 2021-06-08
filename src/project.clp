@@ -201,7 +201,7 @@
     )
 
     (assert (food (name ?name) (rating ?rating) (foodtype ?foodtype) (price ?price)))
-    (printout t ?name " Succesfully added!!" crlf)
+    (printout t ?name " Successfully added!!" crlf)
 )
 
 (deffunction create-foodplan()
@@ -242,7 +242,7 @@
         (name ?name) (duration ?duration)
         (foodname ?foodname) (qty ?qty) (price ?price)
     ))
-    (printout t ?name " Succesfully added!!" crlf)
+    (printout t ?name " Successfully added!!" crlf)
 )
 
 
@@ -300,7 +300,7 @@
         (index "food" ?index)
         (name ?name) (rating ?rating) (foodtype ?foodtype) (price ?price)
     )
-    (printout t "Update Succesful!" crlf)
+    (printout t "Update Successful!" crlf)
 )
 
 (deffunction update-foodplan()
@@ -343,11 +343,14 @@
     (bind ?price (* (* (* ?foodprice 0.8) (/ ?duration 7)) ?qty))
     (printout t "This plans total price is $" ?price crlf)
 
-    (assert (foodplan
-        (name ?name) (duration ?duration)
-        (foodname ?foodname) (qty ?qty) (price ?price)
-    ))
-    (printout t "Update Succesful!" crlf)
+    (modify
+        (index "foodplan" ?index)
+        (foodplan
+            (name ?name) (duration ?duration)
+            (foodname ?foodname) (qty ?qty) (price ?price)
+        )
+    )
+    (printout t "Update Successful!" crlf)
 )
 
 
@@ -359,7 +362,7 @@
     )
 
     (retract (index "food" ?index))
-    (printout t "Delete Succesful!" crlf)
+    (printout t "Delete Successful!" crlf)
 )
 
 (deffunction delete-foodplan()
@@ -370,7 +373,7 @@
     )
 
     (retract (index "foodplan" ?index))
-    (printout t "Delete Succesful!" crlf)
+    (printout t "Delete Successful!" crlf)
 )
 
 ; ==================================================================================================

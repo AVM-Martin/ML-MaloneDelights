@@ -345,10 +345,7 @@
 
     (modify
         (index "foodplan" ?index)
-        (foodplan
-            (name ?name) (duration ?duration)
-            (foodname ?foodname) (qty ?qty) (price ?price)
-        )
+        (name ?name) (duration ?duration) (foodname ?foodname) (qty ?qty) (price ?price)
     )
     (printout t "Update Successful!" crlf)
 )

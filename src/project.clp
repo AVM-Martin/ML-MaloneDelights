@@ -385,8 +385,11 @@
 
 (deftemplate suggest-ask (slot id))
 (deftemplate suggest-answer (slot id) (slot answer))
-(deftemplate suggest-food extends food)
-(deftemplate suggest-foodplan extends foodplan)
+(deftemplate suggest-food (slot name) (slot rating) (slot foodtype) (slot price))
+(deftemplate suggest-foodplan
+    (slot name) (slot duration)
+    (slot foodname) (slot qty) (slot price)
+)
 
 
 (defrule suggest-ask-question

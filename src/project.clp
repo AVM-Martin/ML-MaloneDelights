@@ -611,7 +611,7 @@
     ))
 )
 
-(defrule suggest-food-solution-7
+(defrule suggest-food-solution-8
     (suggest-answer (id 100) (answer "Moderate"))
     (suggest-answer (id 103) (answer "Unlimited"))
     (food (name ?name) (rating ?rating) (foodtype ?foodtype) (price ?price))

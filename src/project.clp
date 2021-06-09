@@ -355,7 +355,7 @@
     (bind ?size (view-food))
     (bind ?index -1)
     (while (or (< ?index 1) (< ?size ?index))
-        (bind ?index (read-int "Item number to be updated: "))
+        (bind ?index (read-int "Item number to be deleted: "))
     )
 
     (retract (index "food" ?index))
@@ -366,7 +366,7 @@
     (bind ?size (view-foodplan))
     (bind ?index -1)
     (while (or (< ?index 1) (< ?size ?index))
-        (bind ?index (read-int "Item number to be updated: "))
+        (bind ?index (read-int "Item number to be deleted: "))
     )
 
     (retract (index "foodplan" ?index))

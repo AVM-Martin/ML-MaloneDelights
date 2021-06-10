@@ -127,9 +127,12 @@
 
     (while (eq (str-compare ?result "") 0)
         (printout t ?text)
-        (try
-            (bind ?result (integer (readline)))
-        catch
+
+        (bind ?result (readline))
+
+        (if (regexp "^-?[0-9]+$" ?result) then
+            (bind ?result (integer ?result))
+        else
             (printout t "Input must be an integer" crlf)
             (bind ?result "")
         )
@@ -143,9 +146,12 @@
 
     (while (eq (str-compare ?result "") 0)
         (printout t ?text)
-        (try
-            (bind ?result (float (readline)))
-        catch
+
+        (bind ?result (readline))
+
+        (if (regexp "^-?[0-9]+.[0-9]+$" ?result) then
+            (bind ?result (float ?result))
+        else
             (printout t "Input must be a float" crlf)
             (bind ?result "")
         )
